@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3j68bnsplwe7"]
+
+[ext_resource type="Texture2D" uid="uid://cb3o4k8lm3gci" path="res://Assets/Platform.png" id="1_e8ytf"]
+[ext_resource type="PackedScene" uid="uid://cmw4cup3fajni" path="res://Scene/Entities/player.tscn" id="2_1buar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe6es"]
+size = Vector2(97, 31)
+
+[node name="Level01" type="Node2D"]
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(250, 305)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+texture = ExtResource("1_e8ytf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_xe6es")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(348, 305)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
+texture = ExtResource("1_e8ytf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_xe6es")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(446, 305)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3"]
+texture = ExtResource("1_e8ytf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_xe6es")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(544, 305)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4"]
+texture = ExtResource("1_e8ytf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_xe6es")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(652, 255)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform5"]
+texture = ExtResource("1_e8ytf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_xe6es")
+
+[node name="Player" parent="." instance=ExtResource("2_1buar")]
+position = Vector2(212, 268)

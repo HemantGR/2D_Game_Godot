@@ -32,5 +32,19 @@ func _physics_process(delta):
 	else:
 		animation.play("IDLE")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	update_animation()
 	move_and_slide()
+	
+func update_animation():
+	
+	if velocity.x != 0:
+		animation.play("RUN")
+		
+	else:
+		animation.play("IDLE")
+		
+	if velocity.y < 0:
+		animation.play("JUMP")
+		
+	if velocity.y > 0:
+		animation.play("FALL")

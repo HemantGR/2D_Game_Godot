@@ -18,8 +18,25 @@
 [ext_resource type="Texture2D" uid="uid://d2jvwem25sb7k" path="res://Assets/Treasure Hunters/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 03.png" id="16_om211"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btmp0"]
-radius = 8.70463
+radius = 6.52848
 height = 22.6967
+
+[sub_resource type="Animation" id="Animation_07h4s"]
+resource_name = "FALL"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ft2qb")]
+}
 
 [sub_resource type="Animation" id="Animation_iw6d4"]
 resource_name = "IDLE"
@@ -38,23 +55,6 @@ tracks/0/keys = {
 "values": [ExtResource("2_xfk1k"), ExtResource("3_0h0ij"), ExtResource("4_dedoi"), ExtResource("5_efvp1"), ExtResource("6_fdaj0")]
 }
 
-[sub_resource type="Animation" id="Animation_0gv2d"]
-resource_name = "RUN"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("8_mvci6"), ExtResource("9_lt3hj"), ExtResource("10_qtbkg"), ExtResource("11_t183s"), ExtResource("12_igiwo"), ExtResource("13_am3lu")]
-}
-
 [sub_resource type="Animation" id="Animation_6waxq"]
 resource_name = "JUMP"
 length = 0.3
@@ -71,9 +71,9 @@ tracks/0/keys = {
 "values": [ExtResource("14_8bbuw"), ExtResource("15_sm4vn"), ExtResource("16_om211")]
 }
 
-[sub_resource type="Animation" id="Animation_07h4s"]
-resource_name = "FALL"
-length = 0.1
+[sub_resource type="Animation" id="Animation_0gv2d"]
+resource_name = "RUN"
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -82,10 +82,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_ft2qb")]
+"values": [ExtResource("8_mvci6"), ExtResource("9_lt3hj"), ExtResource("10_qtbkg"), ExtResource("11_t183s"), ExtResource("12_igiwo"), ExtResource("13_am3lu")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u4s5y"]
@@ -114,3 +114,8 @@ shape = SubResource("CapsuleShape2D_btmp0")
 libraries = {
 "": SubResource("AnimationLibrary_u4s5y")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 2500

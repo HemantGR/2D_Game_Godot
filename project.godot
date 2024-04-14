@@ -14,6 +14,10 @@ config/name="2D Platform Game"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/Core/GameManager.gd"
+
 [display]
 
 window/size/viewport_width=960

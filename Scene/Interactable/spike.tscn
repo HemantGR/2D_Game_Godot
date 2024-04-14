@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qcshnhaqyhdx"]
+
+[ext_resource type="Script" path="res://Scripts/Interactable/spike.gd" id="1_psp70"]
+[ext_resource type="Texture2D" uid="uid://bb7v7hhmg4mnw" path="res://Assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="1_qtvuh"]
+
+[node name="Spike" type="Node2D"]
+script = ExtResource("1_psp70")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qtvuh")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-17, 17, -17, 7, -12, 2, -6, 0, 3, 0, 7, 4, 11, 0, 14, 0, 16, 5, 16, 17)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

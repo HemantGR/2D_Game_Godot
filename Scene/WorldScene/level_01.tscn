@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3j68bnsplwe7"]
+[gd_scene load_steps=13 format=3 uid="uid://d3j68bnsplwe7"]
 
 [ext_resource type="Texture2D" uid="uid://18cset6gejle" path="res://Assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="1_aa04f"]
 [ext_resource type="PackedScene" uid="uid://cmw4cup3fajni" path="res://Scene/Entities/player.tscn" id="2_1buar"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://r6u05sp3xooa" path="res://Scene/Interactable/checkpoint.tscn" id="5_i2c32"]
 [ext_resource type="PackedScene" uid="uid://qcshnhaqyhdx" path="res://Scene/Interactable/spike.tscn" id="6_umgl2"]
 [ext_resource type="PackedScene" uid="uid://d07jftvjq1ag2" path="res://Scene/Interactable/coin.tscn" id="7_yu61u"]
+[ext_resource type="Script" path="res://Scripts/Interactable/UI.gd" id="8_04oth"]
+[ext_resource type="Texture2D" uid="uid://cthaqw6mdt8k8" path="res://Assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="8_hmr64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8spr"]
 texture = ExtResource("2_4sooi")
@@ -1059,3 +1061,22 @@ position = Vector2(1464, 450)
 
 [node name="Coin10" parent="CoinHolder" instance=ExtResource("7_yu61u")]
 position = Vector2(1490, 477)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("8_04oth")
+
+[node name="CoinIcon" type="TextureRect" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 27.0
+offset_bottom = 34.0
+texture = ExtResource("8_hmr64")
+
+[node name="CoinDisplay" type="Label" parent="CanvasLayer"]
+offset_left = 27.0
+offset_top = 5.0
+offset_right = 67.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"

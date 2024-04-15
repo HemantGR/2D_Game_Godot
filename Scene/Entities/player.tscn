@@ -22,8 +22,8 @@ radius = 9.16667
 height = 38.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btmp0"]
-radius = 6.52848
-height = 22.6967
+radius = 5.4404
+height = 20.723
 
 [sub_resource type="Animation" id="Animation_07h4s"]
 resource_name = "FALL"
@@ -110,6 +110,7 @@ scale = Vector2(1.68783, 1.68783)
 texture = ExtResource("2_xfk1k")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -5)
 scale = Vector2(1.08, 1)
 monitoring = false
@@ -119,7 +120,7 @@ scale = Vector2(1.2, 1)
 shape = SubResource("CapsuleShape2D_yriiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -3)
 scale = Vector2(1.8381, 2.02673)
 shape = SubResource("CapsuleShape2D_btmp0")
 
